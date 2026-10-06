@@ -4,6 +4,13 @@ An MCP server that reads and edits the office files in one folder: Word, Excel, 
 
 It talks to the agent over stdio. The agent calls tools. The tools change the real `.docx`, `.xlsx`, `.pptx`, `.odt`, `.ods`, and `.odp` on disk. Nothing is uploaded to a third-party converter.
 
+This is an MCP server for [Collabora Online](https://www.collaboraonline.com/). Collabora renders and edits the document in the browser. This server changes that same file on disk, and Holix Studio reloads the open Collabora tab after a successful edit.
+
+- Site: <https://www.collaboraonline.com/>
+- Repository: <https://github.com/CollaboraOnline/online>
+- Source and code review: <https://gerrit.collaboraoffice.com/>
+- Read-only source mirror: <https://github.com/CollaboraOnline/online.mirror>
+
 [Русский](README.ru.md) · [Tool reference](docs/en/reference.md) · [Справочник](docs/ru/reference.md)
 
 ## What it does

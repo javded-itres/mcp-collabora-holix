@@ -4,6 +4,13 @@ MCP-сервер, который читает и правит офисные ф�
 
 Агент общается с сервером по stdio и вызывает инструменты. Инструменты меняют настоящие `.docx`, `.xlsx`, `.pptx`, `.odt`, `.ods` и `.odp` на диске. Файл никуда не отправляется на конвертацию.
 
+Это MCP-сервер для [Collabora Online](https://www.collaboraonline.com/). Collabora показывает документ в браузере и даёт его править. Этот сервер меняет тот же файл на диске, а Holix Studio после удачной правки перечитывает открытую вкладку Collabora.
+
+- Сайт: <https://www.collaboraonline.com/>
+- Репозиторий: <https://github.com/CollaboraOnline/online>
+- Исходный код и ревью: <https://gerrit.collaboraoffice.com/>
+- Зеркало исходников только для чтения: <https://github.com/CollaboraOnline/online.mirror>
+
 [English](README.md) · [Справочник](docs/ru/reference.md) · [Tool reference](docs/en/reference.md)
 
 ## Что он делает
