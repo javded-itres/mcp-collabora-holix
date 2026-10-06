@@ -11,7 +11,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover - environment pin issue
     ) from exc
 
 mcp = FastMCP(
-    name="holix-office",
+    name="mcp-collabora-holix",
     instructions=(
         "Read and edit office documents in the workspace directory: "
         "docx, xlsx, pptx, odt, ods, and odp. Use office_list_tool, "

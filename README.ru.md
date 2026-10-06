@@ -1,4 +1,4 @@
-# Holix Office
+# MCP Collabora Holix
 
 MCP-сервер, который читает и правит офисные файлы в одной папке: Word, Excel, PowerPoint и LibreOffice.
 
@@ -44,7 +44,7 @@ Holix Studio подключает этот сервер сам, когда вк�
 Нужен Python 3.12 или новее.
 
 ```bash
-pip install "git+https://github.com/javded-itres/holix-office.git"
+pip install "git+https://github.com/javded-itres/mcp-collabora-holix.git"
 python -m holix_office
 ```
 
@@ -72,7 +72,7 @@ export HOLIX_OFFICE_WORKSPACE="$HOME/Documents"
 mcp_servers:
   holix_office:
     transport: stdio
-    command: holix-office
+    command: mcp-collabora-holix
     args: []
     env:
       HOLIX_OFFICE_WORKSPACE: /absolute/path/to/documents
@@ -87,8 +87,8 @@ Claude Desktop, macOS: `~/Library/Application Support/Claude/claude_desktop_conf
 ```json
 {
   "mcpServers": {
-    "holix-office": {
-      "command": "holix-office",
+    "mcp-collabora-holix": {
+      "command": "mcp-collabora-holix",
       "args": [],
       "env": {
         "HOLIX_OFFICE_WORKSPACE": "/absolute/path/to/documents"
@@ -103,18 +103,18 @@ Claude Desktop, macOS: `~/Library/Application Support/Claude/claude_desktop_conf
 Claude Code из каталога проекта:
 
 ```bash
-claude mcp add --transport stdio --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents holix-office -- holix-office
+claude mcp add --transport stdio --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents mcp-collabora-holix -- mcp-collabora-holix
 ```
 
-Если `holix-office` нет в `PATH`, подставьте путь из `command -v holix-office` или команду `python` с аргументами `["-m", "holix_office"]`.
+Если `mcp-collabora-holix` нет в `PATH`, подставьте путь из `command -v mcp-collabora-holix` или команду `python` с аргументами `["-m", "holix_office"]`.
 
 ### OpenClaw
 
 ```bash
-openclaw mcp add holix-office \
-  --command holix-office \
+openclaw mcp add mcp-collabora-holix \
+  --command mcp-collabora-holix \
   --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents
-openclaw mcp doctor holix-office --probe
+openclaw mcp doctor mcp-collabora-holix --probe
 ```
 
 Та же запись в конфигурации OpenClaw:
@@ -122,8 +122,8 @@ openclaw mcp doctor holix-office --probe
 ```text
 mcp:
   servers:
-    holix-office:
-      command: holix-office
+    mcp-collabora-holix:
+      command: mcp-collabora-holix
       transport: stdio
       enabled: true
       env:
@@ -136,32 +136,32 @@ mcp:
 
 ```yaml
 mcp_servers:
-  holix-office:
-    command: holix-office
+  mcp-collabora-holix:
+    command: mcp-collabora-holix
     args: []
     env:
       HOLIX_OFFICE_WORKSPACE: /absolute/path/to/documents
 ```
 
-Дальше `hermes chat`. Инструменты видны как `mcp__holix-office__office_list_tool` и остальные `office_*`.
+Дальше `hermes chat`. Инструменты видны как `mcp__mcp-collabora-holix__office_list_tool` и остальные `office_*`.
 
 ### Codex
 
 `~/.codex/config.toml` или `.codex/config.toml` доверенного проекта:
 
 ```toml
-[mcp_servers.holix-office]
-command = "holix-office"
+[mcp_servers.mcp-collabora-holix]
+command = "mcp-collabora-holix"
 args = []
 
-[mcp_servers.holix-office.env]
+[mcp_servers.mcp-collabora-holix.env]
 HOLIX_OFFICE_WORKSPACE = "/absolute/path/to/documents"
 ```
 
 Или:
 
 ```bash
-codex mcp add holix-office --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents -- holix-office
+codex mcp add mcp-collabora-holix --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents -- mcp-collabora-holix
 ```
 
 В TUI Codex команда `/mcp` показывает сервер.

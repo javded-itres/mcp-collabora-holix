@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "holix-office"
+name = "mcp-collabora-holix"
 version = "0.1.0"
 description = "MCP server that reads and edits DOCX, XLSX, PPTX, ODT, ODS, and ODP files"
 readme = "README.md"
@@ -25,12 +25,12 @@ dependencies = [
 dev = ["pytest>=8", "ruff>=0.8"]
 
 [project.scripts]
-holix-office = "holix_office.__main__:main"
+mcp-collabora-holix = "holix_office.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/javded-itres/holix-office"
-Repository = "https://github.com/javded-itres/holix-office"
-Documentation = "https://github.com/javded-itres/holix-office/blob/main/docs/en/reference.md"
+Homepage = "https://github.com/javded-itres/mcp-collabora-holix"
+Repository = "https://github.com/javded-itres/mcp-collabora-holix"
+Documentation = "https://github.com/javded-itres/mcp-collabora-holix/blob/main/docs/en/reference.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/holix_office"]

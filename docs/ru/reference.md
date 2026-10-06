@@ -1,6 +1,6 @@
-# Справочник инструментов Holix Office
+# Справочник инструментов MCP Collabora Holix
 
-Имя сервера — `holix-office`. Каждый путь считается от `HOLIX_OFFICE_WORKSPACE`. Удачная правка возвращает `ok: true` и, если файл открыт в Holix Studio, поле `editor_refresh`. Отказ возвращает `ok: false` и `error`.
+Имя сервера — `mcp-collabora-holix`. Каждый путь считается от `HOLIX_OFFICE_WORKSPACE`. Удачная правка возвращает `ok: true` и, если файл открыт в Holix Studio, поле `editor_refresh`. Отказ возвращает `ok: false` и `error`.
 
 Не распаковывайте документ и не переписывайте XML в оболочке. Так Studio не узнает о правке, и пакет можно повредить.
 

@@ -1,4 +1,4 @@
-"""Holix Office: an MCP server for DOCX, XLSX, PPTX, ODT, ODS, and ODP."""
+"""MCP Collabora Holix: an MCP server for DOCX, XLSX, PPTX, ODT, ODS, and ODP."""
 
 from __future__ import annotations
 

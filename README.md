@@ -1,4 +1,4 @@
-# Holix Office
+# MCP Collabora Holix
 
 An MCP server that reads and edits the office files in one folder: Word, Excel, PowerPoint, and LibreOffice.
 
@@ -44,8 +44,8 @@ The full contracts are in the [tool reference](docs/en/reference.md).
 Python 3.12 or newer.
 
 ```bash
-pip install "git+https://github.com/javded-itres/holix-office.git"
-holix-office --help 2>/dev/null || true
+pip install "git+https://github.com/javded-itres/mcp-collabora-holix.git"
+mcp-collabora-holix --help 2>/dev/null || true
 python -m holix_office
 ```
 
@@ -73,7 +73,7 @@ In the profile `config.yaml`:
 mcp_servers:
   holix_office:
     transport: stdio
-    command: holix-office
+    command: mcp-collabora-holix
     args: []
     env:
       HOLIX_OFFICE_WORKSPACE: /absolute/path/to/documents
@@ -88,8 +88,8 @@ Claude Desktop, macOS: `~/Library/Application Support/Claude/claude_desktop_conf
 ```json
 {
   "mcpServers": {
-    "holix-office": {
-      "command": "holix-office",
+    "mcp-collabora-holix": {
+      "command": "mcp-collabora-holix",
       "args": [],
       "env": {
         "HOLIX_OFFICE_WORKSPACE": "/absolute/path/to/documents"
@@ -104,18 +104,18 @@ Quit Claude Desktop and open it again.
 Claude Code, from the project directory:
 
 ```bash
-claude mcp add --transport stdio --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents holix-office -- holix-office
+claude mcp add --transport stdio --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents mcp-collabora-holix -- mcp-collabora-holix
 ```
 
-If `holix-office` is not on `PATH`, use the full path printed by `command -v holix-office`, or `python` with args `["-m", "holix_office"]`.
+If `mcp-collabora-holix` is not on `PATH`, use the full path printed by `command -v mcp-collabora-holix`, or `python` with args `["-m", "holix_office"]`.
 
 ### OpenClaw
 
 ```bash
-openclaw mcp add holix-office \
-  --command holix-office \
+openclaw mcp add mcp-collabora-holix \
+  --command mcp-collabora-holix \
   --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents
-openclaw mcp doctor holix-office --probe
+openclaw mcp doctor mcp-collabora-holix --probe
 ```
 
 The same server in OpenClaw config:
@@ -123,8 +123,8 @@ The same server in OpenClaw config:
 ```text
 mcp:
   servers:
-    holix-office:
-      command: holix-office
+    mcp-collabora-holix:
+      command: mcp-collabora-holix
       transport: stdio
       enabled: true
       env:
@@ -137,32 +137,32 @@ mcp:
 
 ```yaml
 mcp_servers:
-  holix-office:
-    command: holix-office
+  mcp-collabora-holix:
+    command: mcp-collabora-holix
     args: []
     env:
       HOLIX_OFFICE_WORKSPACE: /absolute/path/to/documents
 ```
 
-Then `hermes chat`. The tools show up as `mcp__holix-office__office_list_tool` and the other `office_*` tools.
+Then `hermes chat`. The tools show up as `mcp__mcp-collabora-holix__office_list_tool` and the other `office_*` tools.
 
 ### Codex
 
 `~/.codex/config.toml`, or `.codex/config.toml` in a trusted project:
 
 ```toml
-[mcp_servers.holix-office]
-command = "holix-office"
+[mcp_servers.mcp-collabora-holix]
+command = "mcp-collabora-holix"
 args = []
 
-[mcp_servers.holix-office.env]
+[mcp_servers.mcp-collabora-holix.env]
 HOLIX_OFFICE_WORKSPACE = "/absolute/path/to/documents"
 ```
 
 Or:
 
 ```bash
-codex mcp add holix-office --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents -- holix-office
+codex mcp add mcp-collabora-holix --env HOLIX_OFFICE_WORKSPACE=/absolute/path/to/documents -- mcp-collabora-holix
 ```
 
 In the Codex TUI, `/mcp` lists the server.

@@ -1,6 +1,6 @@
-# Holix Office tool reference
+# MCP Collabora Holix tool reference
 
-The server name is `holix-office`. Every path is relative to `HOLIX_OFFICE_WORKSPACE`. A successful edit returns `ok: true` and, when Holix Studio is hosting the file, `editor_refresh: true` or `false`. A refused edit returns `ok: false` and `error`.
+The server name is `mcp-collabora-holix`. Every path is relative to `HOLIX_OFFICE_WORKSPACE`. A successful edit returns `ok: true` and, when Holix Studio is hosting the file, `editor_refresh: true` or `false`. A refused edit returns `ok: false` and `error`.
 
 Do not unzip the package or rewrite XML in a shell. That skips the Studio reload and can break the document.
 
